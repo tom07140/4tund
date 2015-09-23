@@ -1,5 +1,6 @@
 <?php
 	
+	//Loon AB'i ühenduse
 	require_once("../config.php");
 	$database = "if15_toomloo_3";
 	$mysqli = new mysqli($servername, $username, $password, $database);
@@ -81,6 +82,8 @@
   	return $data;
   }
 
+	//Paneme ühenduse kinni
+	$mysqli->close();
 ?>
 <!DOCTYPE html>
 <html>
