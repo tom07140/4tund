@@ -1,7 +1,7 @@
 <?php
 	
 	require_once("../config.php");
-	$database = "if15_toomloo_3"
+	$database = "if15_toomloo_3";
 	$mysqli = new mysqli($servername, $username, $password, $database);
 
 	// muuutujad errorite jaoks
