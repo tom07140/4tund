@@ -1,12 +1,16 @@
 <?php
+	
+	require_once("../config.php");
+	$database = "if15_toomloo_3"
+	$mysqli = new mysqli($servername, $username, $password, $database);
 
-  // muuutujad errorite jaoks
+	// muuutujad errorite jaoks
 	$email_error = "";
 	$password_error = "";
 	$create_email_error = "";
 	$create_password_error = "";
 
-  // muutujad väärtuste jaoks
+	// muutujad väärtuste jaoks
 	$email = "";
 	$password = "";
 	$create_email = "";
@@ -15,15 +19,15 @@
 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // *********************
-    // **** LOGI SISSE *****
-    // *********************
+		// *********************
+		// **** LOGI SISSE *****
+		// *********************
 		if(isset($_POST["login"])){
 
 			if ( empty($_POST["email"]) ) {
 				$email_error = "See väli on kohustuslik";
 			}else{
-        // puhastame muutuja võimalikest üleliigsetest sümbolitest
+			// puhastame muutuja võimalikest üleliigsetest sümbolitest
 				$email = cleanInput($_POST["email"]);
 			}
 
@@ -33,7 +37,7 @@
 				$password = cleanInput($_POST["password"]);
 			}
 
-      // Kui oleme siia jõudnud, võime kasutaja sisse logida
+			// Kui oleme siia jõudnud, võime kasutaja sisse logida
 			if($password_error == "" && $email_error == ""){
 				echo "Võib sisse logida! Kasutajanimi on ".$email." ja parool on ".$password;
 			}
